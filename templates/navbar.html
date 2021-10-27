@@ -1,0 +1,30 @@
+<ul class="nav nav-tabs">
+  {% if user.is_authenticated %}
+      <li class="nav-item">
+        <a class="nav-link active" href="{% url 'home' %}">Account - <strong>{{request.user}}</strong></a>
+      </li>
+    {% else %}
+      <li class="nav-item">
+        <a class="nav-link active" href="{% url 'home' %}">Contact Space</a>
+      </li>
+    {% endif %}
+
+
+    {% if user.is_authenticated %}
+    <li class="nav-item ml-auto">
+      <a class="nav-link" href="{% url 'contact-create' %}">Create</a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+    </li>
+    {% else %}
+      <li class="nav-item ml-auto">
+        <a class="nav-link" href="{% url 'register' %}">Register</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="{% url 'login' %}" tabindex="-1" aria-disabled="true">Login</a>
+      </li>
+    {% endif %}
+    
+  </ul>

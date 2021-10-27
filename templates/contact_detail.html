@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br>
+    <div class="container">
+            <div>
+                <p>
+                    {{object.name}}
+                </p>
+                <p>
+                    {{object.phone}}
+                </p>
+                <span>
+                    {{object.city}}
+                </span>
+
+                <div>
+                    <a
+                class="btn btn-secondary btn-sm"
+                 href="{% url 'contact-update' object.id %}">
+                    update
+                </a>
+
+                <a
+                class="btn btn-danger btn-sm"
+                 href="{% url 'contact-delete' object.id %}">
+                    Delete
+                </a>
+
+                </div>
+                 
+                <hr>
+            </div>         
+    </div>
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br>
+    <div class="container">
+        <p>
+            {% for content in contacts %}
+            <div>
+                <p>
+                    <a href="{% url 'contact-detail' content.id %}">
+                        {{content.name}}
+
+                    </a>
+                </p>
+                <p>
+                    {{content.phone}}
+                </p>
+                <p>
+                    {{content.city}}
+                </p>
+
+                
+                
+                <hr>
+            </div>           
+            {% endfor %}
+
+        </p>
+    </div>
+
+{% endblock %}
